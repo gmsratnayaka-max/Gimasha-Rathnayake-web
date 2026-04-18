@@ -787,6 +787,86 @@ footer {
 }
 .ig-post-card:hover .ig-post-arrow { color: rgba(225,48,108,0.7); }
 
+/* ── TIKTOK PROFILE CARD ── */
+.tiktok-profile-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 28px 24px;
+  min-width: 220px;
+  text-align: center;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.tiktok-profile-card:hover {
+  border-color: rgba(255,255,255,0.18);
+  box-shadow: 0 0 40px rgba(255,255,255,0.04);
+}
+.tiktok-profile-avatar-wrap {
+  width: 88px; height: 88px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid var(--glass-border);
+  box-shadow: 0 0 24px rgba(255,255,255,0.08);
+  flex-shrink: 0;
+}
+.tiktok-profile-avatar {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.tiktok-profile-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.tiktok-profile-name {
+  font-family: 'DM Serif Display', serif;
+  font-size: 17px;
+  color: var(--fg);
+  letter-spacing: 0.01em;
+}
+.tiktok-profile-handle {
+  font-size: 13px;
+  color: var(--fg2);
+  letter-spacing: 0.04em;
+}
+.tiktok-profile-bio {
+  font-size: 12px;
+  color: var(--fg3);
+  line-height: 1.5;
+  margin-top: 4px;
+}
+.tiktok-profile-follow-btn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13px;
+  color: var(--fg);
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 24px;
+  padding: 9px 18px;
+  text-decoration: none;
+  letter-spacing: 0.03em;
+  transition: background 0.2s, border-color 0.2s;
+  margin-top: 4px;
+}
+.tiktok-profile-follow-btn:hover {
+  background: rgba(255,255,255,0.11);
+  border-color: rgba(255,255,255,0.22);
+}
+.tiktok-profile-follow-btn svg {
+  width: 14px; height: 14px;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
 @media (max-width: 900px) {
   .hero { padding: 100px 24px 40px; }
   section { padding: 60px 24px; }
@@ -801,6 +881,7 @@ footer {
   .tiktok-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
   .tiktok-header { flex-direction: column; }
   .li-card { width: 100%; }
+  .tiktok-profile-card { width: 100%; flex-direction: row; text-align: left; }
 }
 </style>
 </head>
@@ -1009,6 +1090,27 @@ footer {
         <a class="tiktok-cta" href="https://www.tiktok.com/@kozykipz" target="_blank">
           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/></svg>
           @kozykipz ↗
+        </a>
+      </div>
+
+      <!-- TikTok Profile Card -->
+      <div class="tiktok-profile-card">
+        <div class="tiktok-profile-avatar-wrap">
+          <img
+            src="./assets/tiktok-profile.jpg"
+            onerror="this.onerror=null;this.src='https://placehold.co/88x88/0d0e13/3c4460?text=KZ';"
+            alt="@kozykipz profile picture"
+            class="tiktok-profile-avatar"
+          >
+        </div>
+        <div class="tiktok-profile-info">
+          <div class="tiktok-profile-name">KoZyKipZ</div>
+          <div class="tiktok-profile-handle">@kozykipz</div>
+          <div class="tiktok-profile-bio">Dark stories · Analog horror · Mysteries 🎙️</div>
+        </div>
+        <a class="tiktok-profile-follow-btn" href="https://www.tiktok.com/@kozykipz" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/></svg>
+          Follow on TikTok
         </a>
       </div>
     </div>
